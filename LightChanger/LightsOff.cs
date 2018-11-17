@@ -1,17 +1,15 @@
-﻿//using System;
-using System.Collections.Generic;
-using System.Linq;
-//using System.Text;
+﻿using System.Linq;
 using UnityEngine;
+using System.Collections.Generic;
 
 namespace LightChanger
 {
     [KSPAddon(KSPAddon.Startup.MainMenu, false)]
-    public class LightsOff
+    public class LightsOff : MonoBehaviour
     {
         public void Start()
         {
-
+            ChangeLight();
         }
         
         public void ChangeLight()
@@ -22,7 +20,7 @@ namespace LightChanger
             List<Light> Light_list = new List<Light>();
 
             //populate list
-            Light_list = Object.FindObjectsOfType<Light>().ToList();
+            Light_list = GameObject.FindObjectsOfType<Light>().ToList<Light>();
 
             //KSP 1.5 added a few new ligts in the Main Menu and changed a property of the sunlight
             //iterate through the whole list, looking for additional lights and destroy them
@@ -33,7 +31,7 @@ namespace LightChanger
                 lightname = LightObject.name.ToString();
 
                 if (lightname == "BackLight")
-                {                    
+                {
                     Destroy(LightObject);
                 }
                 else if (lightname == "FillLight")

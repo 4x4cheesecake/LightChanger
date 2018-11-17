@@ -34,8 +34,7 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\KSP\KSP_1.5.1\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="System.XML" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System" />
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\..\KSP\KSP_1.5.1\KSP_x64_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
@@ -44,5 +43,14 @@
     <Compile Include="LightsOff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(TargetFileName) "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /eyir
+xcopy License.txt "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /eyir</PostBuildEvent>
+  </PropertyGroup>
 </Project>
