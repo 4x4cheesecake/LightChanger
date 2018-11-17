@@ -46,6 +46,6 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy $(TargetPath) "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\Plugins\" /eyir
-xcopy $(SolutionDir)License.txt "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /y</PostBuildEvent>
+xcopy $(SolutionDir)LICENSE.md "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
