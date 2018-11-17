@@ -1,4 +1,4 @@
-﻿# KSP LightChanger
+# KSP LightChanger
 
 Fixes the cloud flickering in the Main Menu when using Environmental Visual Enhancements (EVE) in KSP 1.5.1.
 

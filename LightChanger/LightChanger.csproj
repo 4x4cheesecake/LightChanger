@@ -40,20 +40,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LightsOff.cs" />
+    <Compile Include="LightChanger\LightsOff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="License.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(TargetFileName) "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /eyir
-xcopy License.txt "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /eyir</PostBuildEvent>
+    <PostBuildEvent>xcopy $(TargetPath) "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\Plugins\" /eyir
+xcopy $(SolutionDir)License.txt "C:\Program Files (x86)\Steam\steamapps\common\Kerbal Space Program\GameData\LightChanger\" /y</PostBuildEvent>
   </PropertyGroup>
 </Project>

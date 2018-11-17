@@ -20,7 +20,7 @@ namespace LightChanger
             List<Light> Light_list = new List<Light>();
 
             //populate list
-            Light_list = GameObject.FindObjectsOfType<Light>().ToList<Light>();
+            Light_list = FindObjectsOfType<Light>().ToList();
 
             //KSP 1.5 added a few new ligts in the Main Menu and changed a property of the sunlight
             //iterate through the whole list, looking for additional lights and destroy them
